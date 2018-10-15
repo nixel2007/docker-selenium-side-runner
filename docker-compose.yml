@@ -11,8 +11,9 @@ services:
     #   - '4444:4444'
 
   selenium-side-runner:
-    build:
-      context: .
+    image: nixel2007/docker-selenium-side-runner
+    # build:
+    #   context: .
     volumes:
       - './sides:/sides'
       - './out:/root/out'
