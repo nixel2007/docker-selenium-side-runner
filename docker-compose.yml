@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  chromedriver:
+    image: robcherry/docker-chromedriver
+    privileged: true
+    restart: always
+    environment:
+      - CHROMEDRIVER_WHITELISTED_IPS=''
+    # ports:
+    #   - '4444:4444'
+
+  selenium-side-runner:
+    build:
+      context: .
+    volumes:
+      - './sides:/sides'
+      - './out:/root/out'
